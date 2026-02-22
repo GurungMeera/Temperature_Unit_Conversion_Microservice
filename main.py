@@ -21,3 +21,24 @@ def ftoc_conversion(temp: int):
         return {"error": "temperature must be between -50 and 150 degree Fahrenheit."}
     c = (temp - 32) / 1.8
     return {"result": c, "unit": "C"}
+
+@app.get("/thermometer/")
+def thermometer_icon(temp: float, unit: str):
+    if unit == "F":
+        c = (temp - 32) / 1.8
+    else:
+        c = temp
+    if c < -30 or c > 50:
+        return {"error": "Temperature must be between -40C and 50C."}
+    if -20 <= c < 5:
+        icon = "/icons/cold.png"
+    elif 5 <= c < 15:
+        icon = "/icons/cool.png"
+    elif 15 <= c <= 27:
+        icon = "/icons/warm.png"
+    else: 
+        icon = "/icons/hot.png"
+
+    return {
+        "icon_url": icon
+    }
