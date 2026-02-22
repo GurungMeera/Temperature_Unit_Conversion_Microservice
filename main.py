@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Server is running"}
 
 
 @app.get("/ctof/")
@@ -42,3 +42,7 @@ def thermometer_icon(temp: float, unit: str):
     return {
         "icon_url": icon
     }
+
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run(app)
