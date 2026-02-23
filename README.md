@@ -43,7 +43,8 @@ GET http://replace-with-your-url/thermometer/?temp=30&unit=F
 ![UML](imgs/UML.png)
 ## Contributing
 Meera Gurung - user story 1 & 2 
-Jordan Smith 
+Jordan Smith - temp test & video
 Chris Mosier
 Jericho Arizala - user story 3 & readme
+
 
